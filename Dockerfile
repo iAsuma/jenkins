@@ -5,7 +5,7 @@ USER root
 COPY ./sources.list /etc/apt/sources.list
 
 RUN apt-get update && \
-    apt-get install -y lsb-release build-essential libxml2-dev libssl-dev pkg-config gcc libkrb5-dev libsqlite3-dev zlib1g \
+    apt-get install -y npm lsb-release build-essential libxml2-dev libssl-dev pkg-config gcc libkrb5-dev libsqlite3-dev zlib1g \
     zlib1g-dev libbz2-dev libcurl4-openssl-dev libpng-dev libjpeg-dev libonig-dev libzip-dev \
     libxpm-dev libfreetype6-dev libgmp-dev libgmp3-dev libmcrypt-dev libpspell-dev librecode-dev libreadline-dev libtidy-dev libxslt1-dev
 

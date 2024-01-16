@@ -1,0 +1,30 @@
+Started by user [8mha:////4Jn3qVbLDoo5gjzKPl7tH2b2iVPVROF5vmEZsWKDDlc6AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xOLS3EQA9OS0BsAAAAA=[0masuma
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/ymdl-admin-api
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ymdl-admin-api/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@e.coding.net:g-uppy4356/yimiduoliao/yimiduoliao-admin-api.git # timeout=10
+Fetching upstream changes from git@e.coding.net:g-uppy4356/yimiduoliao/yimiduoliao-admin-api.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git fetch --tags --force --progress -- git@e.coding.net:g-uppy4356/yimiduoliao/yimiduoliao-admin-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/backup
+Seen branch in repository origin/master
+Seen 2 remote branches
+ > git show-ref --tags -d # timeout=10
+Checking out Revision de27c694c316bc8092bddde2d5c01523e823c9ca (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f de27c694c316bc8092bddde2d5c01523e823c9ca # timeout=10
+Commit message: "update composer.json"
+ > git rev-list --no-walk de27c694c316bc8092bddde2d5c01523e823c9ca # timeout=10
+[ymdl-admin-api] $ /bin/bash /tmp/jenkins3412236049255694719.sh
+我选择了build
+SSH: Connecting from host [42c4dbd571a9]
+SSH: Connecting with configuration [测试服务器(113.31.111.41)] ...
+SSH: EXEC: completed after 200 ms
+SSH: Disconnecting configuration [测试服务器(113.31.111.41)] ...
+ERROR: Exception when publishing, exception message [Exec exit status not zero. Status [2]]
+Build step 'Send files or execute commands over SSH' changed build result to UNSTABLE
+Finished: UNSTABLE

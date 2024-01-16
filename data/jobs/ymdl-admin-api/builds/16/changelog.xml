@@ -1,0 +1,10 @@
+commit de27c694c316bc8092bddde2d5c01523e823c9ca
+tree 513a712728a9e3d9a22185cdcacdfce8112d789b
+parent e959e42b69ffccd443abb0c84ba8297528b6ddd3
+author li shuaiqiu <770878450@qq.com> 2024-01-13 17:24:22 +0800
+committer li shuaiqiu <770878450@qq.com> 2024-01-13 17:24:22 +0800
+
+    update composer.json
+
+
+:100644 100644 52a127a56cfba864616d3b3d24ad2a46f1330a66 6e099ce4a7a61f9e4f60eb0ef3e050dd11dde386 M	composer.json

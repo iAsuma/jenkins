@@ -1,3 +1,3 @@
-## A Jenkins For PHP Environment
+## A Jenkins For Mix Environment
 
-jenkins with php 、composer
+jenkins with java、php 、composer、vue、nodejs、npm

@@ -9,6 +9,10 @@ RUN apt-get update && \
     zlib1g-dev libbz2-dev libcurl4-openssl-dev libpng-dev libjpeg-dev libonig-dev libzip-dev \
     libxpm-dev libfreetype6-dev libgmp-dev libgmp3-dev libmcrypt-dev libpspell-dev librecode-dev libreadline-dev libtidy-dev libxslt1-dev
 
+RUN npm install pnpm -g
+
+RUN pnpm i vite-plugin-imagemin -D
+
 COPY resource/php-8.1.27.tar.gz /tmp/
 
 RUN cd /tmp && tar -zxvf php-8.1.27.tar.gz && \

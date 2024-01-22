@@ -1,0 +1,68 @@
+WHAT_ACTION
+
+build
+rollback
+
+
+BRANCH
+
+SRC_CODE
+default
+
+
+构建过程1
+
+#!/bin/bash
+action=${WHAT_ACTION}
+
+if [[ $action == "build" ]]; then
+	echo "我选择了build"
+    
+    echo "安装基础包"
+    pnpm install
+    
+    echo "构建中..."
+	pnpm run build
+    
+    [ ! -d "build/${SRC_CODE}" ] && mkdir -p build/${SRC_CODE} && echo "创建打包目录"
+    
+    echo "删除历史构建版本，保留最近20个版本"
+    find build/${SRC_CODE} -name "${JOB_NAME}${SRC_CODE}_*.tar.gz"  -exec ls -lt {} + | tail -n +2 | awk '{print $NF}' | xargs rm -f
+    
+    echo "打包程序"
+    tar -zcf build/${SRC_CODE}/${JOB_NAME}${SRC_CODE}_${BUILD_NUMBER}.tar.gz --exclude=build -C dist .
+fi
+
+if [[ $action == "rollback" ]]; then
+	echo "我选择了rollback"
+fi
+
+构建后
+Source files
+build/${SRC_CODE}/${JOB_NAME}${SRC_CODE}_${BUILD_NUMBER}.tar.gz
+
+Remove prefix
+build/${SRC_CODE}
+
+Remote directory
+${JOB_NAME}
+
+Exec command
+
+#!/bin/bash
+action=${WHAT_ACTION}
+
+if [[ $action == "build" ]]; then
+cd /www/buildwork/${JOB_NAME}
+mkdir -p  ${SRC_CODE}/${BUILD_NUMBER}
+
+tar -zxvf ${JOB_NAME}${SRC_CODE}_${BUILD_NUMBER}.tar.gz -C ${SRC_CODE}/${BUILD_NUMBER}
+
+mkdir -p /www/wwwroot/${JOB_NAME}
+ln -snf /www/buildwork/${JOB_NAME}/${SRC_CODE}/${BUILD_NUMBER} /www/wwwroot/${JOB_NAME}/${SRC_CODE}
+
+fi
+
+if [[ $action == "rollback" ]]; then
+ln -snf /www/buildwork/${JOB_NAME}/${SRC_CODE}/${ROLLBACK_ID} /www/wwwroot/${JOB_NAME}/${SRC_CODE}
+fi
